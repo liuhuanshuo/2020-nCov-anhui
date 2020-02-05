@@ -1,0 +1,520 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>武汉加油</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="../static/css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="../static/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="../static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="../static/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="../static/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../static/img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        
+        
+		    <script>
+		function myFunction(){
+			alert("开发中，即将上线！");
+		}
+		</script>
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center"><h2>武汉加油</h2>
+          <!-- User Info-->
+          <!-- Small Brand information, appears on minimized sidebar-->
+          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong></strong><strong class="text-primary"></strong></a></div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+          
+          <ul id="side-main-menu" class="side-menu list-unstyled">                  
+            <li><a href="../index.html"> <i class="icon-home"></i>首页                             </a></li>
+            <li><a href="../tables.html"> <i class="icon-grid"></i>详细数据 </a></li>
+            
+            <li><a href="../index.html" onclick="myFunction()"> <i class="fa fa-bar-chart"></i>数据分析                             </a></li>
+            
+            <li><a href="../index.html" onclick="myFunction()"> <i class="icon-form"></i>疫情预测                            </a></li>
+
+
+        </div>
+
+      </div>
+    </nav>
+    
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><span></span><strong class="text-primary">2019-nCoV安徽省疫情追踪</strong></div></a></div>
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Notifications dropdown-->
+                
+                <!-- Languages dropdown    -->
+
+                <!-- Log out-->
+               
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+      <section class="dashboard-counts section-padding">
+        <div class="container-fluid">
+          <div class="row">
+          
+            <!-- Count item widget-->
+            <div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-user"></i></div>
+                <div class="name"><strong class="text-uppercase">全国累计确诊</strong><span>Last 30 days</span>
+                  <div class="count-number">{{total}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- Count item widget-->
+            <div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-padnote"></i></div>
+                <div class="name"><strong class="text-uppercase">全国累计疑似</strong><span>Last 30 days</span>
+                  <div class="count-number">{{yisi}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- Count item widget-->
+            <div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-check"></i></div>
+                <div class="name"><strong class="text-uppercase">全国累计治愈</strong><span>Last 30 days</span>
+                  <div class="count-number">{{cured}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- Count item widget-->
+            <div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-bill"></i></div>
+                <div class="name"><strong class="text-uppercase">安徽累计确诊</strong><span>Last 30 days</span>
+                  <div class="count-number">{{anhui_total}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- Count item widget-#by :liuzaoqi huanshuo0801@gmail.com->
+            <div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-list"></i></div>
+                <div class="name"><strong class="text-uppercase">安徽累计治愈</strong><span>Last 30 days</span>
+                  <div class="count-number">{{anhui_crued}}</div>
+                </div>
+              </div>
+            </div>
+            <!-- Count item widget-->
+            <div class="col-xl-2 col-md-4 col-6">
+              <div class="wrapper count-title d-flex">
+                <div class="icon"><i class="icon-list-1"></i></div>
+                <div class="name"><strong class="text-uppercase">芜湖累计确诊</strong><span>Last 30 days</span>
+                  <div class="count-number">{{wuhu_total}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Header Section-->
+      <section class="dashboard-header section-padding">
+        <div class="container-fluid">
+          <div class="row d-flex align-items-md-stretch">
+            <!-- To Do List-->
+            <div class="col-lg-3 col-md-6">
+              <div class="card to-do">
+                <h2 class="display h4">安徽省疫情最新消息跟踪</h2>
+                <p>来源：腾讯新闻、丁香医生。自动采集</p>
+                <div id="activities-box" role="tabpanel" class="collapse show">
+                  <ul class="activities list-unstyled">
+                    <!-- Item-->
+                    <li>
+                      <div class="row">
+                        <div class="col-4 date-holder text-right">
+                          <div class="icon"><i class="icon-clock"></i></div>
+                          <div class="date"> <span>{{news1_time}}</span></div>
+                        </div>
+                        <div class="col-8 content"><a href="{{news1_url}}" class="signup">{{news1_source}}</a>
+                          <p>{{news1_title}}</p>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- Item-->
+                    <li>
+                      <div class="row">
+                        <div class="col-4 date-holder text-right">
+                          <div class="icon"><i class="icon-clock"></i></div>
+                          <div class="date"> <span>{{news2_time}}</span></div>
+                        </div>
+                        <div class="col-8 content"><a href="{{news2_url}}" class="signup">{{news2_source}}</a>
+                          <p>{{news2_title}}</p>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- Item-->
+                    <li>
+                      <div class="row">
+                        <div class="col-4 date-holder text-right">
+                          <div class="icon"><i class="icon-clock"></i></div>
+                          <div class="date"> <span>{{news3_time}}</span></div>
+                        </div>
+                        <div class="col-8 content"><a href="{{news3_url}}" class="signup">{{news3_source}}</a>
+                          <p>{{news3_title}}</p>
+                        </div>
+                      </div>
+                    </li>
+                    <!-- Item-->
+                    
+                                        <li>
+                      <div class="row">
+                        <div class="col-4 date-holder text-right">
+                          <div class="icon"><i class="icon-clock"></i></div>
+                          <div class="date"> <span>{{news4_time}}</span></div>
+                        </div>
+                        <div class="col-8 content"><a href="{{news4_url}}" class="signup">{{news4_source}}</a>
+                          <p>{{news4_title}}</p>
+                        </div>
+                      </div>
+                    </li>
+                    
+                                        <li>
+                      <div class="row">
+                        <div class="col-4 date-holder text-right">
+                          <div class="icon"><i class="icon-clock"></i></div>
+                          <div class="date"> <span>{{news5_time}}</span></div>
+                        </div>
+                        <div class="col-8 content"><a href="{{news5_url}}" class="signup">{{news5_source}}</a>
+                          <p>{{news5_title}}</p>
+                        </div>
+                      </div>
+                    </li>
+                    
+                    
+
+                    
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- Pie Chart-->
+            <div class="col-lg-3 col-md-6">
+              <div class="card project-progress">
+                <h2 class="display h4">安徽省疫情地图</h2>
+                <p> 安徽省疫情分布</p>
+                <div class="row">
+                 <iframe width="440" height="500" frameborder="0" src="../static/map1.html"></iframe>
+                </div>
+              </div>
+            </div>
+            <!-- Line Chart -->
+            <div class="col-lg-6 col-md-12 flex-lg-last flex-md-first align-self-baseline">
+              <div class="card sales-report">
+                <h2 class="display h4">确诊病例分布</h2>
+                <p> 安徽省各城市确诊病例占比</p>
+                  <div class="row">
+                 <iframe width="620" height="500" frameborder="0" src="../static/map2.html"></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Statistics Section-->
+
+      
+      <!-- Updates Section -->
+      <section class="mt-30px mb-30px">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-4 col-md-12">
+              <!-- Recent Updates Widget          -->
+              <div id="new-updates" class="card updates recent-updated">
+                <div id="updates-header" class="card-header d-flex justify-content-between align-items-center">
+                  <h2 class="h5 display"><a data-toggle="collapse" data-parent="#new-updates" href="#updates-box" aria-expanded="true" aria-controls="updates-box">最新论文</a></h2><a data-toggle="collapse" data-parent="#new-updates" href="#updates-box" aria-expanded="true" aria-controls="updates-box"><i class="fa fa-angle-down"></i></a>
+                </div>
+                
+                <div id="updates-box" role="tabpanel" class="collapse show">
+                  <ul class="news list-unstyled">
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="https://www.medrxiv.org/content/10.1101/2020.01.27.20018986v1.full.pdf" class="signup"><strong>The incubation period of 2019-nCoV infections among travellers from Wuhan, China(2020-01-27)</strong></a>
+
+</strong>
+                          <p>根据武汉市以外发现的34例确诊病例的旅行史和症状发作，我们估计平均潜伏期为5.8（4.6 – 7.9，95％CI）天，范围为1.3至11.3天（2.5％至97.5％））。</p>
+                        </div>
+                      </div>
+                      <div class="right-col text-right">
+                        <div class="update-date">27<span class="month">Jan</span></div>
+                      </div>
+                    </li>
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="https://academic.oup.com/jtm/advance-article/doi/10.1093/jtm/taaa011/5716260" class="signup"><strong>Potential for global spread of a novel coronavirus from China (2020-01-27)</strong></a>
+                          <p>R将缅甸，柬埔寨，印度，印度尼西亚，菲律宾列为相对脆弱的国家。
+</p>
+                        </div>
+                      </div>
+                      <div class="right-col text-right">
+                        <div class="update-date">27<span class="month">Jan</span></div>
+                      </div>
+                    </li>
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="https://www.med.hku.hk/f/news/3549/7418/Wuhan-coronavirus-outbreak_AN-UPDATE_20200127.pdf" class="signup"><strong>Real-time nowcast and forecast on the extent of the Wuhan CoV outbreak, domestic and international spread (2020-01-27)</strong></a>
+                          <p>Hong Kong University professors estimate 43,590 infections as of 2020-01-25. (ie. ~20x 'confirmed cases')
+2019-nCoV may be about to become a global epidemic
+Self-sustaining human-to-human spread is already present in all major Chinese cities</p>
+                        </div>
+                      </div>
+                      <div class="right-col text-right">
+                        <div class="update-date">27<span class="month">Jan</span></div>
+                      </div>
+                    </li>
+                    <!-- Item-->
+
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="https://raw.githubusercontent.com/jriou/wcov/master/manuscript_v2.pdf" class="signup"><strong> Pattern of early human-to-human transmission of Wuhan 2019-nCoV(2020-01-24)</strong></a>
+                          <p>我们发现基本繁殖数R0约为2.2（90％高密度区间1.4-3.8），这表明人与人之间持续传播的潜力。 传播特征似乎与严重的急性呼吸综合征相关冠状病毒（SARS-CoV）和1918年大流行性流感相似。</p>
+                        </div>
+                      </div>
+                      <div class="right-col text-right">
+                        <div class="update-date">24<span class="month">Jan</span></div>
+                      </div>
+                    </li>
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="https://www.medrxiv.org/content/10.1101/2020.01.23.20018549v1.full.pdf" class="signup"><strong>Novel coronavirus 2019-nCoV: early estimation of epidemiological parameters and epidemic predictions(2020-01-23)</strong></a>
+                          <p>Only 5% of cases are likely reported in official figures of confirmed cases.</p>
+                        </div>
+                      </div>
+                      <div class="right-col text-right">
+                        <div class="update-date">23<span class="month">Jan</span></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Recent Updates Widget End-->
+    </div>
+     <div class="col-lg-4 col-md-6">
+              <!-- Daily Feed Widget-->
+              <div id="daily-feeds" class="card updates daily-feeds">
+                <div id="feeds-header" class="card-header d-flex justify-content-between align-items-center">
+                  <h2 class="h5 display"><a data-toggle="collapse" data-parent="#daily-feeds" href="#feeds-box" aria-expanded="true" aria-controls="feeds-box">相关工具 </a></h2>
+                  <div class="right-column">
+                    <div class="badge badge-primary">10更新</div><a data-toggle="collapse" data-parent="#daily-feeds" href="#feeds-box" aria-expanded="true" aria-controls="feeds-box"><i class="fa fa-angle-down"></i></a>
+                  </div>
+                </div>
+                <div id="feeds-box" role="tabpanel" class="collapse show">
+                  <div class="feed-box">
+                    <ul class="feed-elements list-unstyled">
+                      <!-- List-->
+                      <li class="clearfix">
+                        <div class="feed d-flex justify-content-between">
+                          <div class="feed-body d-flex justify-content-between"><a href="http://2019ncov.nosugartech.com/?from=timeline&isappinstalled=0" class="feed-profile"><img src="../static/img/map-marker-blue.png" alt="person" class="img-fluid rounded-circle"></a>
+                            <div class="content"><a href="http://2019ncov.nosugartech.com/?from=timeline&isappinstalled=0"><strong>行程查询</strong></a><small>查询车次</small>
+                              <div class="full-date"><small>2019-nCoV 新型肺炎确诊患者相同行程查询工具 V1.2</small></div>
+                            </div>
+                          </div>
+                          <div class="date"><small>2020-02-01</small></div>
+                        </div>
+                          <div class="message-card"> <small>* 同乘人员、可能接触人员返家后，暂不要外出，居家封闭隔离观察。如有发热症状请就近到网上公布的指定医院发热门诊救治。
+    * 就诊过程中，要全程佩戴口罩，尽量不要乘坐公共交通工具。
+    * 同乘人员、可能接触人员要第一时间到所在社区进行登记，并与所在县（市）区疾病预防控制部门取得联系。
+</small></div>
+                      </li>
+                      <!-- List-->
+                      <li class="clearfix">
+                        <div class="feed d-flex justify-content-between">
+                          <div class="feed-body d-flex justify-content-between"><a href="http://datanews.caixin.com/interactive/2020/fever/" class="feed-profile"><img src="../static/img/tu1.png" alt="person" class="img-fluid rounded-circle"></a>
+                            <div class="content"><a href="http://datanews.caixin.com/interactive/2020/fever/"><strong>医院查询</strong></a><small>by 财新数据可视化实验室</small>
+                              <div class="full-date"><small>依据各地卫健委数据构建的各地新型肺炎定点医院地图</small></div>
+                              
+                            </div>
+                          </div>
+                          <div class="date"><small>2020-01-31</small></div>
+                        </div>
+                      </li>
+                      <!-- List-->
+                      <li class="clearfix">
+                        <div class="feed d-flex justify-content-between">
+                          <div class="feed-body d-flex justify-content-between"><a href="https://mbd.baidu.com/newspage/data/mdpage?tag=8&id=5807" class="feed-profile"><img src="../static/img/tu2.jpg" alt="person" class="img-fluid rounded-circle"></a>
+                            <div class="content"><a href="https://mbd.baidu.com/newspage/data/mdpage?tag=8&id=5807"><strong>辟谣平台</strong></a><small>by 百度辟谣 </small>
+                              <div class="full-date"><small>正视风险，注意甄别，自觉做到不造谣、不信谣、不传谣！</small></div>
+                            </div>
+                          </div>
+                          <div class="date"><small>2020-01-31</small></div>
+                        </div>
+                      </li>
+                      <!-- List-->
+                      <li class="clearfix">
+                        <div class="feed d-flex justify-content-between">
+                          <div class="feed-body d-flex justify-content-between"><a href="https://ask.dxy.com/ama/index#/disease/24677/info/0" class="feed-profile"><img src="../static/img/tu3.png" alt="person" class="img-fluid rounded-circle"></a>
+                            <div class="content"><a href="https://ask.dxy.com/ama/index#/disease/24677/info/0"><strong>疾病知识</strong></a><small>by 丁香医生 </small>
+                              <div class="full-date"><small>疾病相关知识权威解读</small></div>
+                            </div>
+                          </div>
+                          <div class="date"><small>2020-01-31</small></div>
+                        </div>
+                      
+                          <div class="message-card"> <small>* 此次流行的冠状病毒为一种新发现的冠状病毒，WHO 命名为 2019-nCoV。因为人群缺少对新型病毒株的免疫力，所以人群普遍易感。
+    * 为了安全起见，大家千万不要吃未经检疫的野生动物、生鲜等食品，比如路边的生肉，不要为了「尝鲜」冒险。
+</small></div>
+                        
+                      </li>
+                      <!-- List-->
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Daily Feed Widget End-->
+              </div>
+            <div class="col-lg-4 col-md-6">
+              <!-- Recent Activities Widget      -->
+              <div id="recent-activities-wrapper" class="card updates activities">
+                <div id="activites-header" class="card-header d-flex justify-content-between align-items-center">
+                  <h2 class="h5 display"><a data-toggle="collapse" data-parent="#recent-activities-wrapper" href="#" >武汉加油</a></h2><a data-toggle="collapse" data-parent="#" href="#" aria-expanded="true" aria-controls="activities-box"><i class="fa fa-angle-down"></i></a>
+                </div>
+                <div id="updates-box" role="tabpanel" class="collapse show">
+                  <ul class="news list-unstyled">
+                  
+                  
+                  
+                  
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="https://onwh.51rry.com/#/" class="signup"><strong>湖北医疗物资需求信息平台</strong></a>
+
+</strong>
+                          <p>***</p>
+                          <p>项目来源于github</p>
+                          <p>***</p>
+                        </div>
+                      </div>
+
+                    </li>
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="http://rescue.sitiits.com:9966/visur/#/" class="signup"><strong>新冠肺炎物资公益平台</strong></a>
+                                                    <p>***</p>
+                          <p>项目来源于github</p>
+                          <p>***</p>
+                        </div>
+                      </div>
+
+                    </li>
+
+                    <!-- Item-->
+                                        <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><a href="#" class="signup"><strong>现金捐赠</strong></a>
+                        <p>***</p>
+                                                    <p>以下均为官方捐赠通道（非武汉市红十字会）</p>
+                                                    
+                          <a href="http://wx.wuhan.n.gongyibao.cn/tp/#/projectdetail?id=f4f4e1bc-a20f-46b9-86f6-21152d652e15"><p>武汉市慈善总会</p></a></br>
+                          <a href="https://render.alipay.com/p/c/k5t7pvs6?chInfo=spring2020-stay-in"><p>支付宝公益项目</p></a></br>
+                          <a href="https://ssl.gongyi.qq.com/m/weixin/detail.htm?pid=220795&et=tb_cat&ADTAG=idx.m.tb_cat&gt=m_cate"><p>腾讯公益</p></a></br>
+                          <a href="https://3.cn/C5bZlPNf?&utm_source=iosapp&utm_medium=appshare&utm_campaign=t_335139774&utm_term=CopyURL&ad_od=share&utm_user=plusmember"><p>京东专项捐款</p></a></br>
+                          <a href="https://gongyi.suning.com/sngypro4.html?id=426"><p>苏宁专项捐款</p></a>
+                          <p>***</p>
+                        </div>
+                      </div>
+
+                    </li>
+                    <!-- Item-->
+                    <li class="d-flex justify-content-between"> 
+                      <div class="left-col d-flex">
+                        <div class="icon"><i class="icon-rss-feed"></i></div>
+                        <div class="title"><strong>声明</strong>
+                          <p>请勿用于任何商业行为！</p>
+							  <p>衷心感谢各位医疗工作者的付出和努力，自身没有医学背景，做些力所能及的事情，让大家增强对疫情的关注，让未感染者做好更全面的防护。</p>
+							  <p>***</p>
+							  <p>联系：huanshuo0801@gmail.com</p>
+                        </div>
+                      </div>
+
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              </div>
+              </div>
+              </div>
+ </section>
+
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>联系:huanshuo0801@gmail.com   请勿用于商业用途</p>
+            </div>
+            
+              
+            
+          </div>
+        </div>
+      </footer>
+     </div>
+     
+    <!-- JavaScript files-->
+    <script src="../static/vendor/jquery/jquery.min.js"></script>
+    <script src="../static/vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="../static/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="../static/vendor/chart.js/Chart.min.js"></script>
+    <script src="../static/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../static/js/charts-home.js"></script>
+    <!-- Main File-->
+    <script src="../static/js/front.js"></script>
+  </body>
+</html>

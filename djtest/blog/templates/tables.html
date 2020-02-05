@@ -1,0 +1,607 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>武汉加油</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    
+    
+
+    
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../static/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="../static/vendor/font-awesome/css/font-awesome.min.css">
+    <!-- Fontastic Custom icon font-->
+    <link rel="stylesheet" href="../static/css/fontastic.css">
+    <!-- Google fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <!-- jQuery Circle-->
+    <link rel="stylesheet" href="../static/css/grasp_mobile_progress_circle-1.0.0.min.css">
+    <!-- Custom Scrollbar-->
+    <link rel="stylesheet" href="../static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="../static/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="../static/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+    
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+		    <script>
+		function myFunction(){
+			alert("开发中，即将上线！");
+		}
+		</script>
+  </head>
+  <body>
+    <!-- Side Navbar -->
+    <nav class="side-navbar">
+      <div class="side-navbar-wrapper">
+        <!-- Sidebar Header    -->
+        <div class="sidenav-header d-flex align-items-center justify-content-center"><h2>武汉加油</h2>
+          <!-- User Info-->
+          <!-- Small Brand information, appears on minimized sidebar-->
+          <div class="sidenav-header-logo"><a href="index.html" class="brand-small text-center"> <strong></strong><strong class="text-primary"></strong></a></div>
+        </div>
+        <!-- Sidebar Navigation Menus-->
+        <div class="main-menu">
+          
+          <ul id="side-main-menu" class="side-menu list-unstyled">                  
+            <li><a href="../index.html"> <i class="icon-home"></i>首页                             </a></li>
+            <li><a href="../tables.html"> <i class="icon-grid"></i>详细数据 </a></li>
+            
+            <li><a href="../index.html" onclick="myFunction()"> <i class="fa fa-bar-chart"></i>数据分析                             </a></li>
+            
+            <li><a href="../index.html" onclick="myFunction()"> <i class="icon-form"></i>疫情预测                            </a></li>
+
+
+        </div>
+
+      </div>
+    </nav>
+    
+    <div class="page">
+      <!-- navbar-->
+      <header class="header">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-holder d-flex align-items-center justify-content-between">
+              <div class="navbar-header"><a id="toggle-btn" href="#" class="menu-btn"><i class="icon-bars"> </i></a><a href="index.html" class="navbar-brand">
+                  <div class="brand-text d-none d-md-inline-block"><span></span><strong class="text-primary">2019-nCoV安徽省疫情追踪</strong></div></a></div>
+              <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
+                <!-- Notifications dropdown-->
+                
+                <!-- Languages dropdown    -->
+
+                <!-- Log out-->
+               
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+
+      <section>
+        <div class="container-fluid">
+          <!-- Page Header-->
+          <header> 
+            <h1 class="h3 display">疫情详细数据            </h1>
+          </header>
+
+
+          <div class="row">
+
+
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h4>全国疫情数据</h4>
+                </div>
+
+
+
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id = "myTable" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>序号</th>
+                          <th>省/市</th>
+                          <th>确诊</th>
+                          <th>死亡</th>
+                          <th>治愈</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>湖北省</td>
+                          <td>{{hubei_1}}</td>
+                          <td>{{hubei_2}}</td>
+                          <td>{{hubei_3}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>浙江省</td>
+                          <td>{{zj_1}}</td>
+                          <td>{{zj_2}}</td>
+                          <td>{{zj_3}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>广东省</td>
+                          <td>{{gd_1}}</td>
+                          <td>{{gd_2}}</td>
+                          <td>{{gd_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">4</th>
+                          <td>河南省</td>
+                          <td>{{hn2_1}}</td>
+                          <td>{{hn2_2}}</td>
+                          <td>{{hn2_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">5</th>
+                          <td>湖南省</td>
+                          <td>{{hn1_1}}</td>
+                          <td>{{hn1_2}}</td>
+                          <td>{{hn1_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">6</th>
+                          <td>安徽省</td>
+                          <td>{{ah_1}}</td>
+                          <td>{{ah_2}}</td>
+                          <td>{{ah_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">7</th>
+                          <td>重庆市</td>
+                          <td>{{cq_1}}</td>
+                          <td>{{cq_2}}</td>
+                          <td>{{cq_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">8</th>
+                          <td>江西省</td>
+                          <td>{{js_1}}</td>
+                          <td>{{js_2}}</td>
+                          <td>{{js_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">9</th>
+                          <td>山东省</td>
+                          <td>{{sd_1}}</td>
+                          <td>{{sd_2}}</td>
+                          <td>{{sd_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">10</th>
+                          <td>四川省</td>
+                          <td>{{sc_1}}</td>
+                          <td>{{sc_2}}</td>
+                          <td>{{sc_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">11</th>
+                          <td>江苏省</td>
+                          <td>{{js_1}}</td>
+                          <td>{{js_2}}</td>
+                          <td>{{js_3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">12</th>
+                          <td>北京市</td>
+                          <td>{{bj_1}}</td>
+                          <td>{{bj_2}}</td>
+                          <td>{{bj_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">13</th>
+                          <td>上海市</td>
+                          <td>{{sh_1}}</td>
+                          <td>{{sh_2}}</td>
+                          <td>{{sh_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">14</th>
+                          <td>福建省</td>
+                          <td>{{fj_1}}</td>
+                          <td>{{fj_2}}</td>
+                          <td>{{fj_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">15</th>
+                          <td>广西省</td>
+                          <td>{{gx_1}}</td>
+                          <td>{{gx_2}}</td>
+                          <td>{{gx_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">16</th>
+                          <td>云南省</td>
+                          <td>{{yn_1}}</td>
+                          <td>{{yn_2}}</td>
+                          <td>{{yn_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">17</th>
+                          <td>陕西省</td>
+                          <td>{{sx1_1}}</td>
+                          <td>{{sx1_2}}</td>
+                          <td>{{sx1_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">18</th>
+                          <td>河北省</td>
+                          <td>{{hb_1}}</td>
+                          <td>{{hb_2}}</td>
+                          <td>{{hb_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">19</th>
+                          <td>海南省</td>
+                          <td>{{hn_1}}</td>
+                          <td>{{hn_2}}</td>
+                          <td>{{hn_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">20</th>
+                          <td>黑龙江省</td>
+                          <td>{{hlj_1}}</td>
+                          <td>{{hlj_2}}</td>
+                          <td>{{hlj_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">21</th>
+                          <td>辽宁省</td>
+                          <td>{{ln_1}}</td>
+                          <td>{{ln_2}}</td>
+                          <td>{{ln_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">22</th>
+                          <td>山西省</td>
+                          <td>{{sx_1}}</td>
+                          <td>{{sx_2}}</td>
+                          <td>{{sx_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">23</th>
+                          <td>天津市</td>
+                          <td>{{tj_1}}</td>
+                          <td>{{tj_2}}</td>
+                          <td>{{tj_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">24</th>
+                          <td>甘肃省</td>
+                          <td>{{gs_1}}</td>
+                          <td>{{gs_2}}</td>
+                          <td>{{gs_3}}</td>
+                        </tr>
+                        
+                         <tr>
+                          <th scope="row">25</th>
+                          <td>内蒙古</td>
+                          <td>{{nmg_1}}</td>
+                          <td>{{nmg_2}}</td>
+                          <td>{{nmg_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">26</th>
+                          <td>宁夏省</td>
+                          <td>{{nx_1}}</td>
+                          <td>{{nx_2}}</td>
+                          <td>{{nx_3}}</td>
+                        </tr>
+                         <tr>
+                          <th scope="row">27</th>
+                          <td>新疆省</td>
+                          <td>{{xj_1}}</td>
+                          <td>{{xj_2}}</td>
+                          <td>{{xj_3}}</td>
+                        </tr> <tr>
+                          <th scope="row">28</th>
+                          <td>吉林省</td>
+                          <td>{{jl_1}}</td>
+                          <td>{{jl_2}}</td>
+                          <td>{{jl_3}}</td>
+                        </tr> <tr>
+                          <th scope="row">29</th>
+                          <td>贵州省</td>
+                          <td>{{gz_1}}</td>
+                          <td>{{gz_2}}</td>
+                          <td>{{gz_3}}</td>
+                        </tr> <tr>
+                          <th scope="row">30</th>
+                          <td>香港市</td>
+                          <td>{{hk_1}}</td>
+                          <td>{{hk_2}}</td>
+                          <td>{{hk_3}}</td>
+                        </tr> <tr>
+                          <th scope="row">31</th>
+                          <td>台湾市</td>
+                          <td>{{tw_1}}</td>
+                          <td>{{tw_2}}</td>
+                          <td>{{tw_3}}</td>
+                        </tr> <tr>
+                          <th scope="row">32</th>
+                          <td>青海省</td>
+                          <td>{{qh_1}}</td>
+                          <td>{{qh_2}}</td>
+                          <td>{{qh_3}}</td>
+                        </tr> <tr>
+                          <th scope="row">33</th>
+                          <td>澳门市</td>
+                          <td>{{am_1}}</td>
+                          <td>{{am_2}}</td>
+                          <td>{{am_3}}</td>
+                        </tr> <tr>
+                          <th scope="row">34</th>
+                          <td>西藏</td>
+                          <td>{{xz_1}}</td>
+                          <td>{{xz_2}}</td>
+                          <td>{{xz_3}}</td>
+                        </tr> 
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+                        <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h4>安徽疫情数据</h4>
+                </div>
+
+
+
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id = "myTable1" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>序号</th>
+                          <th>城市</th>
+                          <th>确诊</th>
+                          <th>死亡</th>
+                           <th>治愈</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>安庆市</td>
+                          <td>{{aq1}}</td>
+                          <td>{{aq2}}</td>
+                          <td>{{aq3}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>芜湖市</td>
+                          <td>{{wh1}}</td>
+                          <td>{{wh2}}</td>
+                          <td>{{wh3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">3</th>
+                          <td>亳州市</td>
+                          <td>{{bz1}}</td>
+                          <td>{{bz2}}</td>
+                          <td>{{bz3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">4</th>
+                          <td>黄山市</td>
+                          <td>{{hs1}}</td>
+                          <td>{{hs2}}</td>
+                          <td>{{hs3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">5</th>
+                          <td>淮北市</td>
+                          <td>{{hb1}}</td>
+                          <td>{{hb2}}</td>
+                          <td>{{hb3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">6</th>
+                          <td>蚌埠市</td>
+                          <td>{{bb1}}</td>
+                          <td>{{bb2}}</td>
+                          <td>{{bb3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">7</th>
+                          <td>马鞍山市</td>
+                          <td>{{mas1}}</td>
+                          <td>{{mas2}}</td>
+                          <td>{{mas3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">8</th>
+                          <td>铜陵市</td>
+                          <td>{{tl1}}</td>
+                          <td>{{tl2}}</td>
+                          <td>{{tl3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">9</th>
+                          <td>池州市</td>
+                          <td>{{cz1}}</td>
+                          <td>{{cz2}}</td>
+                          <td>{{cz3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">10</th>
+                          <td>宿州市</td>
+                          <td>{{sz1}}</td>
+                          <td>{{sz2}}</td>
+                          <td>{{sz3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">11</th>
+                          <td>合肥市</td>
+                          <td>{{hf1}}</td>
+                          <td>{{hf2}}</td>
+                          <td>{{hf3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">12</th>
+                          <td>宣城市</td>
+                          <td>{{xc1}}</td>
+                          <td>{{xc2}}</td>
+                          <td>{{xc3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">13</th>
+                          <td>滁州市</td>
+                          <td>{{cz1}}</td>
+                          <td>{{cz2}}</td>
+                          <td>{{cz3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">14</th>
+                          <td>阜阳市</td>
+                          <td>{{fy1}}</td>
+                          <td>{{fy2}}</td>
+                          <td>{{fy3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">15</th>
+                          <td>淮南市</td>
+                          <td>{{hn1}}</td>
+                          <td>{{hn2}}</td>
+                          <td>{{hn3}}</td>
+                        </tr>
+                                                <tr>
+                          <th scope="row">16</th>
+                          <td>六安市</td>
+                          <td>{{la1}}</td>
+                          <td>{{la2}}</td>
+                          <td>{{la3}}</td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h4>待定表格</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table id = "myTable" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>待定</th>
+                          <th>待定</th>
+                          <th>待定</th>
+                          <th>待定</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>待定</td>
+                          <td>待定</td>
+                          <td>待定</td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header">
+                  <h4>待定表格</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                     <table id = "myTable" class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>待定</th>
+                          <th>待定</th>
+                          <th>待定</th>
+                          <th>待定</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>待定</td>
+                          <td>待定</td>
+                          <td>待定</td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>联系:huanshuo0801@gmail.com   请勿用于商业用途</p>
+            </div>
+            
+              
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+    
+    <!-- JavaScript files #by :liuzaoqi huanshuo0801@gmail.com-->
+    <script src="../static/vendor/popper.js/umd/popper.min.js"> </script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="../static/vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="../static/vendor/chart.js/Chart.min.js"></script>
+    <script src="../static/vendor/jquery-validation/jquery.validate.min.js"></script>
+    <script src="../static/vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <!-- Main File-->
+    <script src="../static/js/front.js"></script>
+  </body>
+  <script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+
+  <script>
+$(document).ready(function(){
+    $('#myTable1').dataTable();
+});
+</script>
+</html>

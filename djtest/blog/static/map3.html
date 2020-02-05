@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="0d96784713624111881a1cfd0e3557c7" class="chart-container" style="width:700px; height:400px;"></div>
+    <script>
+        var chart_0d96784713624111881a1cfd0e3557c7 = echarts.init(
+            document.getElementById('0d96784713624111881a1cfd0e3557c7'), 'white', {renderer: 'canvas'});
+        var option_0d96784713624111881a1cfd0e3557c7 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u6cbb\u6108",
+            "data": [
+                "5",
+                "3",
+                "2",
+                "3",
+                "",
+                "1",
+                "1",
+                "2",
+                "1",
+                "",
+                "1",
+                "",
+                "1",
+                "",
+                "",
+                ""
+            ],
+            "stack": "stack1",
+            "barCategoryGap": "20%",
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "itemStyle": {
+                "color":         function (params) {            if (params.value > 0 ) {                return '#90EE90';            } else if (params.value < 0) {                return '#FF7F50';            }            return 'green';        }        
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u786e\u8bca",
+            "data": [
+                "93",
+                "84",
+                "58",
+                "56",
+                "30",
+                "19",
+                "34",
+                "11",
+                "11",
+                "48",
+                "23",
+                "24",
+                "4",
+                "14",
+                "12",
+                "9"
+            ],
+            "stack": "stack1",
+            "barCategoryGap": "20%",
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "itemStyle": {
+                "color":         function (params) {            if (params.value > 0 ) {                return '#F08080';            } else if (params.value < 0) {                return '#FF7F50';            }            return 'green';        }        
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u6cbb\u6108",
+                "\u786e\u8bca"
+            ],
+            "selected": {
+                "\u6cbb\u6108": true,
+                "\u786e\u8bca": true
+            }
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u5408\u80a5\u5e02",
+                "\u961c\u9633\u5e02",
+                "\u4eb3\u5dde\u5e02",
+                "\u5b89\u5e86\u5e02",
+                "\u9a6c\u978d\u5c71\u5e02",
+                "\u94dc\u9675\u5e02",
+                "\u516d\u5b89\u5e02",
+                "\u6ec1\u5dde\u5e02",
+                "\u6c60\u5dde\u5e02",
+                "\u868c\u57e0\u5e02",
+                "\u829c\u6e56\u5e02",
+                "\u5bbf\u5dde\u5e02",
+                "\u5ba3\u57ce\u5e02",
+                "\u6dee\u5317\u5e02",
+                "\u6dee\u5357\u5e02",
+                "\u9ec4\u5c71\u5e02"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ]
+};
+        chart_0d96784713624111881a1cfd0e3557c7.setOption(option_0d96784713624111881a1cfd0e3557c7);
+    </script>
+</body>
+</html>
