@@ -8,6 +8,7 @@
 ![1sf9QU.png](https://s2.ax1x.com/2020/02/05/1sf9QU.png)</br>
 
 ## 其他
-源码为项目完整代码，请勿用于任何商业用途，联系：huanshuo0801@gmail.com
+源码为项目完整代码，下载源码可快速部署（后续会出文档）。
+请勿用于任何商业用途，联系：huanshuo0801@gmail.com
 
 
