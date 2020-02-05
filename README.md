@@ -5,9 +5,9 @@
 网站开发部署：Django：[中文文档](https://docs.djangoproject.com/en/3.0/).  </br>
 ## 页面预览
 ![1sWXon.png](https://s2.ax1x.com/2020/02/05/1sWXon.png)
-![1sf9QU.png](https://s2.ax1x.com/2020/02/05/1sf9QU.png)
+![1sf9QU.png](https://s2.ax1x.com/2020/02/05/1sf9QU.png)</br>
 
-##其他
-请勿用于任何商业用途，联系：huanshuo0801@me.com
+## 其他
+源码为项目完整代码，请勿用于任何商业用途，联系：huanshuo0801@me.com
 
 
