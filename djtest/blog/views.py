@@ -317,6 +317,27 @@ def tables(request):
 def map2(request):
 
     return render(request, 'map2.html',locals())
+
+def test(request):
+
+    return render(request, 'test.html',locals())
+
+
+def charts(request):
+
+    return render(request, 'charts.html',locals())
+
+def line(request):
+
+    return render(request, 'line.html',locals())
+
+def pie1(request):
+
+    return render(request, 'pie1.html',locals())
+def pie2(request):
+
+    return render(request, 'pie2.html',locals())
+
 def map3(request):
 
     return render(request, 'map3.html',locals())

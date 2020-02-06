@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var option = {
+    title: [{
+              text: '0206全国确诊病情分步',
+              bottom: '1%',
+              left:'3%',
+          },
+          {
+              text: "0206全国新增病情分步",
+              right: '14%',
+              bottom: '1%',
+
+          }],
+    tooltip: {},
+    dataset: {
+        source: [
+            ['id', '1', '2'],
+            ['宁夏',34 , 6],
+            ['内蒙古',42 , 4],
+            ['吉林', 54,5 ],
+            ['甘肃', 62,0],
+            ['贵州', 64,5 ],
+            ['天津',69 , 9],
+            ['山西',81 , 9],
+            ['辽宁',89 ,11 ],
+            ['海南',99 ,7 ],
+            ['云南', 128,5 ],
+            ['河北',135, 22],
+            ['湖北',19665 , 2987],
+            ['广西',150 ,18 ],
+            ['陕西', 165, 8],
+            ['黑龙江',190 ,37 ],
+            ['福建', 205,10 ],
+            ['上海', 243, 14],
+            ['北京', 253,21 ],
+            ['四川', 301, 20],
+            ['山东', 307,40 ],
+            ['江苏', 341,32 ],
+            ['重庆', 389, 24],
+            ['安徽', 530, 61],
+            ['江西', 548, 52],
+            ['湖南', 661, 50],
+            ['河南',764 , 87],
+            ['浙江',895 , 59],
+            ['广东',895 , 100],
+            
+        ]
+    },
+    series: [{
+        type: 'pie',
+        radius:  ['10%', '30%'],
+        center: ['20%', '50%'],
+                encode: {
+            itemName: 'id',
+            value: '1'
+        }
+    }, {
+        type: 'pie',
+        radius: ['10%', '30%'],
+        center: ['70%', '50%'],
+        encode: {
+            itemName: 'id',
+            value: '2'
+        }
+    }]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

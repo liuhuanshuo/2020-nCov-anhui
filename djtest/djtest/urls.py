@@ -32,6 +32,10 @@ urlpatterns = [
     url(r'^map2.html/',views.map2),
     
     url(r'^map3.html/',views.map3),
-    url(r'^tables.html/',views.tables)
-
+    url(r'^tables.html/',views.tables),
+    url(r'^test.html/',views.test),
+    url(r'^charts.html/',views.charts),
+    url(r'^line.html/',views.line),
+    url(r'^pie1.html/',views.pie1),
+    url(r'^pie2.html/',views.pie2)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

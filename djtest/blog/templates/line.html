@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=xfhhaTThl11qYVrqLZii6w8qE5ggnhrY&__ec_v__=20190126"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+option = {
+
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['全国新增确诊', '湖北新增确诊', '鄂外新增确诊']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['1/24', '1/25', '1/26', '1/27', '1/28', '1/29', '1/30','1/31',
+            '2/1','2/2','2/3','2/4','2/5','2/6']
+    },
+    yAxis: {
+        type: 'value'
+    },
+    series: [
+        {
+            name: '全国新增确诊',
+            type: 'line',
+label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            
+            data: [269,511,668,781,1773,1465,2054,1662,2090,2589,2851,3189,3904,3626],
+            smooth:true,
+        },
+        {
+            name: '湖北新增确诊',
+            type: 'line',
+label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            smooth:true,
+            data:[105,180,323,371,1291,840,1032,1220,1347,1921,2103,2345,3156,2987]
+        },
+        {
+            name: '鄂外新增确诊',
+            type: 'line',
+label: {
+                normal: {
+                    show: true,
+                    position: 'top'
+                }
+            },
+            
+            lineStyle:{ 
+color:'#F08080' //改变折线颜色
+} ,
+            smooth:true,
+            data: [154,264,365,398,480,619,705,762,755,669,726,890,731,711]
+        },
+    ]
+};
+;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>

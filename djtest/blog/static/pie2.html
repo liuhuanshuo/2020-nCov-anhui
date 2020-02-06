@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl/dist/echarts-gl.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat/dist/ecStat.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/map/js/world.js"></script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+var option = {
+    title: [{
+              text: '0206鄂外确诊病情分步',
+              bottom: '1%',
+              left:'3%',
+          },
+          {
+              text: "0206鄂外新增病情分步",
+              right: '14%',
+              bottom: '1%',
+
+          }],
+    tooltip: {},
+    dataset: {
+        source: [
+            ['id', '1', '2'],
+            ['黄河中下游(鲁豫晋陕)',1317 , 144],
+            ['广东',895 , 100],
+            ['华南(除广东)(湘桂琼)', 910,75 ],
+            ['浙江', 895,59],
+            ['长三角(沪苏皖)(除浙江)', 1114,107 ],
+            ['京津冀',457 , 52],
+            ['西南(云贵川渝)',882 , 54],
+            ['东三省',333 ,53 ],
+            ['全国其他',891 ,72 ],
+            
+            
+        ]
+    },
+    series: [{
+        type: 'pie',
+        radius:  ['10%', '35%'],
+        center: ['20%', '50%'],
+                encode: {
+            itemName: 'id',
+            value: '1'
+        }
+    }, {
+        type: 'pie',
+        radius: ['10%', '35%'],
+        center: ['70%', '50%'],
+        encode: {
+            itemName: 'id',
+            value: '2'
+        }
+    }]
+};;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+       </script>
+   </body>
+</html>
