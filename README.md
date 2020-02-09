@@ -1,6 +1,6 @@
 # 2020-nCov省份定制疫情跟踪
 本项目为利用python制作2020新型冠状病毒疫情数据追踪与可视化。[使用电脑端打开（手机端尚未适配）](http://120.55.96.4:8000/index.html/). </br>
-数据获取：百度实时疫情数据：[API地址](https://service-nxxl1y2s-1252957949.gz.apigw.tencentcs.com/release/newpneumonia).  </br>
+数据获取与处理：百度实时疫情数据：[快速上手](https://github.com/liuhuanshuo/zaoqi_study/blob/master/python%E7%9B%B8%E5%85%B3/%E5%88%A9%E7%94%A8request%E7%88%AC%E5%8F%96%E6%95%B0%E6%8D%AE.md).  </br>
 数据可视化：pyecharts：[使用指南](https://github.com/liuhuanshuo/zaoqi_study/blob/master/python%E7%9B%B8%E5%85%B3/%E4%BD%BF%E7%94%A8pytecharts%E8%BF%9B%E8%A1%8C%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96.md).  </br>
 网站开发部署：Django：[中文文档](https://docs.djangoproject.com/en/3.0/).  </br>
 ## 页面预览
